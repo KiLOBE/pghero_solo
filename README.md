@@ -9,3 +9,9 @@ This repository has an [automated build](https://registry.hub.docker.com/u/bmort
 ```
 docker run -ti -e DATABASE_URL=postgres://user@10.0.2.2:5432/myapp_development -p 8080:8080 bmorton/pghero
 ```
+
+If you want to run for development:
+
+```
+rerun --pattern="../pghero/**/*.*{rb}" "bundle exec puma -t 3:5 -w 1 -p 8080"
+```
